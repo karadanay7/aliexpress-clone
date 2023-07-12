@@ -49,7 +49,7 @@
         aria-label="github"
         type="button"
       >
-        <nuxt-img
+        <img
           class="w-full max-w-[30px]"
           src="/github-logo.png"
           alt="githublogo"
