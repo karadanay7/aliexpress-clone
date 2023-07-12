@@ -1,16 +1,27 @@
 <template>
-  <div id="MenuOverlay" class="fixed bottom-0 h-full w-full bg-white px-3">
+  <div id="MenuOverlay" class="fixed z-50 bottom-0 h-full w-full bg-white px-3">
     <div class="flex items-center justify-between py-5">
-      <nuxt-link to="/" @click="userStore.isMenuOverlay = false">
-        <img width="170" src="/AliExpress-logo.png" />
-      </nuxt-link>
+      <NuxtLink to="/" @click="userStore.isMenuOverlay = false">
+        <nuxt-img
+          width="170"
+          src="/AliExpress-logo.png"
+          alt="aliexpres"
+          title="aliexpress"
+          sizes="sm:100vw md:50vw lg:400px"
+        />
+      </NuxtLink>
+
       <button
+        type="button"
         @click="userStore.isMenuOverlay = false"
         class="rounded-full p-1 hover:bg-gray-200"
+        id="close"
+        aria-label="close"
       >
         <Icon name="mdi:close" size="30" />
       </button>
     </div>
+
     <div class="flex items-center justify-between pt-5">
       <ul class="w-full">
         <li
@@ -22,6 +33,7 @@
             <span class="pl-4">My Orders</span>
           </div>
         </li>
+
         <li
           @click="goTo('shoppingcart')"
           class="relative flex items-center justify-between py-2.5 border-b px-3 hover:bg-gray-100 cursor-pointer"
@@ -30,15 +42,15 @@
             <Icon name="ph:shopping-cart-simple-light" size="33" />
             <span class="pl-4">Cart</span>
           </div>
-
           <div
             class="flex items-center justify-center bg-[#FF4646] h-[35px] min-w-[35px] text-lg text-white rounded-full"
           >
             {{ userStore.cart.length }}
           </div>
         </li>
+
         <li
-          v-if="false"
+          v-if="user"
           @click="signOut()"
           class="relative flex items-center justify-between py-2.5 border-b px-3 hover:bg-gray-100 cursor-pointer"
         >
@@ -47,6 +59,7 @@
             <span class="pl-4">Sign out</span>
           </div>
         </li>
+
         <li
           v-else
           @click="signIn()"
@@ -66,17 +79,20 @@
 import { useUserStore } from "~/stores/user";
 const userStore = useUserStore();
 
-// const client = useSupabaseClient()
-// const user = useSupabaseUser()
+const client = useSupabaseClient();
+const user = useSupabaseUser();
+
 const goTo = (url) => {
   userStore.isMenuOverlay = false;
   return navigateTo(`/${url}`);
 };
+
 const signOut = () => {
   client.auth.signOut();
   userStore.isMenuOverlay = false;
   return navigateTo("/");
 };
+
 const signIn = () => {
   userStore.isMenuOverlay = false;
   return navigateTo("/auth");

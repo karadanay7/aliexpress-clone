@@ -3,23 +3,27 @@
     <div id="ItemPage" class="mt-4 max-w-[1200px] mx-auto px-2">
       <div class="md:flex gap-4 justify-between mx-auto w-full">
         <div class="md:w-[40%]">
-          <img
+          <nuxt-img
             v-if="currentImage"
             class="rounded-lg object-fit"
             :src="currentImage"
+            alt="currentimage"
+            title="current image"
           />
           <div
             v-if="images[0] !== ''"
             class="flex items-center justify-center mt-2"
           >
             <div v-for="image in images">
-              <img
+              <nuxt-img
                 @mouseover="currentImage = image"
                 @click="currentImage = image"
                 width="70"
                 class="rounded-md object-fit border-[3px] cursor-pointer"
                 :class="currentImage === image ? 'border-[#FF5353]' : ''"
                 :src="image"
+                alt="imagees"
+                title="images"
               />
             </div>
           </div>
@@ -73,9 +77,12 @@
           <div class="py-2" />
 
           <button
+            type="submit"
             @click="addToCart()"
             :disabled="isInCart"
             class="px-6 py-2 rounded-lg text-white text-lg font-semibold bg-gradient-to-r from-[#FF851A] to-[#FFAC2C]"
+            id="addtocart"
+            aria-label="addtocart"
           >
             <div v-if="isInCart">Is Added</div>
             <div v-else>Add to Cart</div>

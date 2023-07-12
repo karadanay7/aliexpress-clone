@@ -85,7 +85,13 @@
         class="flex lg:justify-start justify-between gap-10 max-w-[1150px] w-full px-3 py-5 mx-auto"
       >
         <NuxtLink to="/" class="min-w-[170px]">
-          <img width="170" src="/AliExpress-logo.png" />
+          <nuxt-img
+            width="170"
+            src="/AliExpress-logo.png"
+            alt="aliexpresslogo"
+            title="aliexpress"
+            sizes="sm:100vw md:50vw lg:400px"
+          />
         </NuxtLink>
 
         <div class="max-w-[700px] w-full md:block hidden">
@@ -106,7 +112,10 @@
                 class="mr-2"
               />
               <button
+                type="button"
                 class="flex items-center h-[100%] p-1.5 px-2 bg-[#FF4646]"
+                id="serach"
+                aria-label="serach"
               >
                 <Icon name="ph:magnifying-glass" size="20" color="#ffffff" />
               </button>
@@ -123,7 +132,13 @@
                   class="flex items-center justify-between w-full cursor-pointer hover:bg-gray-100"
                 >
                   <div class="flex items-center">
-                    <img class="rounded-md" width="40" :src="item.url" />
+                    <nuxt-img
+                      class="rounded-md"
+                      width="40"
+                      :src="item.url"
+                      alt="itemlogo"
+                      title="item"
+                    />
                     <div class="truncate ml-2">{{ item.title }}</div>
                   </div>
                   <div class="truncate">${{ item.price / 100 }}</div>
@@ -135,9 +150,12 @@
 
         <NuxtLink to="/shoppingcart" class="flex items-center">
           <button
+            type="button"
             class="relative md:block hidden"
             @mouseenter="isCartHover = true"
             @mouseleave="isCartHover = false"
+            id="cart"
+            aria-label="cart"
           >
             <span
               class="absolute flex items-center justify-center -right-[3px] top-0 bg-[#FF4646] h-[17px] min-w-[17px] text-xs text-white px-0.5 rounded-full"
@@ -155,8 +173,11 @@
         </NuxtLink>
 
         <button
+          type="button"
           @click="userStore.isMenuOverlay = true"
           class="md:hidden block rounded-full p-1.5 -mt-[4px] hover:bg-gray-200"
+          id="hamburder"
+          aria-label="hamburher"
         >
           <Icon name="radix-icons:hamburger-menu" size="33" />
         </button>

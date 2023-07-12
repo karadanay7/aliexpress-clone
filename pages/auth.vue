@@ -4,7 +4,12 @@
       class="w-full flex items-center justify-center p-5 border-b border-b-gray-300"
     >
       <NuxtLink to="/" class="min-w-[170px]">
-        <img width="170" src="/AliExpress-logo.png" />
+        <nuxt-img
+          width="170"
+          src="/AliExpress-logo.png"
+          alt="aliexpresslogo"
+          title="aliexpress"
+        />
       </NuxtLink>
     </div>
 
@@ -12,18 +17,34 @@
       <div class="text-center my-6">Login / Register</div>
 
       <button
+        type="button"
         @click="login('google')"
         class="flex items-center justify-center gap-3 p-1.5 w-full border hover:bg-gray-100 rounded-full text-lg font-semibold"
+        id="google"
+        aria-label="google"
       >
-        <img class="w-full max-w-[30px]" src="/google-logo.png" />
+        <nuxt-img
+          class="w-full max-w-[30px]"
+          src="/google-logo.png"
+          alt="googlelogo"
+          title="google-logo"
+        />
         <div>Google</div>
       </button>
 
       <button
+        type="button"
         @click="login('github')"
         class="mt-4 flex items-center justify-center gap-3 p-1.5 w-full border hover:bg-gray-100 rounded-full text-lg font-semibold"
+        id="github"
+        aria-label="github"
       >
-        <img class="w-full max-w-[30px]" src="/github-logo.png" />
+        <nuxt-img
+          class="w-full max-w-[30px]"
+          src="/github-logo.png"
+          alt="githublogo"
+          title="github-logo"
+        />
         <div>Github</div>
       </button>
     </div>

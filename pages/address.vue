@@ -48,6 +48,8 @@
             :disabled="isWorking"
             type="submit"
             class="mt-6 bg-gradient-to-r from-[#FE630C] to-[#FF3200] w-full text-white text-[21px] font-semibold p-1.5 rounded-full"
+            id="loading"
+            aria-label="loading"
           >
             <div v-if="!isWorking">Update Address</div>
             <Icon v-else name="eos-icons:loading" size="25" class="mr-2" />

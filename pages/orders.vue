@@ -21,7 +21,12 @@
                 class="flex items-center gap-3 p-1 hover:underline hover:text-blue-500"
                 :to="`/item/${item.productId}`"
               >
-                <img width="40" :src="item.product.url" />
+                <nuxt-img
+                  width="40"
+                  :src="item.product.url"
+                  alt="producturl"
+                  title="item"
+                />
                 {{ item.product.title }}
               </NuxtLink>
             </div>

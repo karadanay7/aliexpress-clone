@@ -6,7 +6,13 @@
         class="h-[500px] flex items-center justify-center"
       >
         <div class="pt-20">
-          <img class="mx-auto" width="250" src="/cart-empty.png" />
+          <nuxt-img
+            class="mx-auto"
+            width="250"
+            src="/cart-empty.png"
+            alt="empty"
+            title="empty"
+          />
 
           <div class="text-xl text-center mt-4">No items yet?</div>
 
@@ -57,8 +63,11 @@
               </div>
             </div>
             <button
+              type="submit"
               @click="goToCheckout"
               class="flex items-center justify-center bg-[#FD374F] w-full text-white text-[21px] font-semibold p-1.5 rounded-full mt-4"
+              id="checkout"
+              aria-label="checkout"
             >
               Checkout
             </button>
@@ -68,7 +77,7 @@
             <div class="text-lg font-semibold mb-2">Payment methods</div>
             <div class="flex items-center justify-start gap-8 my-4">
               <div v-for="card in cards">
-                <img class="h-6" :src="card" />
+                <nuxt-img class="h-6" :src="card" alt="card" title="card" />
               </div>
             </div>
 

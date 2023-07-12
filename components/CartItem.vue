@@ -18,7 +18,11 @@
         </div>
       </div>
     </div>
-    <img class="rounded-md md:w-[150px] w-[90px]" :src="product.url" />
+    <nuxt-img
+      class="rounded-md md:w-[150px] w-[90px]"
+      :src="product.url"
+      alt="producturl"
+    />
     <div class="overflow-hidden pl-2 w-full">
       <div class="flex items-center justify-between w-full">
         <div class="flex items-center justify-between truncate">
@@ -29,8 +33,11 @@
           <div class="truncate sm:pl-2">{{ product.title }}</div>
         </div>
         <button
+          type="button"
           @click="removeFromCart()"
           class="mx-3 sm:block hidden -mt-0.5 hover:text-red-500"
+          id="trash"
+          aria-label="trash"
         >
           <Icon name="material-symbols:delete-outline" size="20" />
         </button>
@@ -44,8 +51,11 @@
       <p class="text-[#009A66] text-xs font-semibold pt-1">Free Shipping</p>
       <div class="flex items-center justify-end">
         <button
+          type="button"
           @click="removeFromCart()"
           class="sm:hidden -mt-0.5 hover:text-red-500"
+          id="trash"
+          aria-label="trash"
         >
           <Icon name="material-symbols:delete-outline" size="20" />
         </button>
