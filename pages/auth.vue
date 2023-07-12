@@ -17,7 +17,6 @@
       <div class="text-center my-6">Login / Register</div>
 
       <button
-        type="button"
         @click="login('google')"
         class="flex items-center justify-center gap-3 p-1.5 w-full border hover:bg-gray-100 rounded-full text-lg font-semibold"
         id="google"
@@ -34,7 +33,6 @@
       </button>
 
       <button
-        type="button"
         @click="login('github')"
         class="mt-4 flex items-center justify-center gap-3 p-1.5 w-full border hover:bg-gray-100 rounded-full text-lg font-semibold"
         id="github"
