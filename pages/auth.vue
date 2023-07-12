@@ -9,6 +9,11 @@
           src="/AliExpress-logo.png"
           alt="aliexpresslogo"
           title="aliexpress"
+          :sizes="{
+            sm: '100vw',
+            md: '50vw',
+            lg: '400px',
+          }"
         />
       </NuxtLink>
     </div>
@@ -21,15 +26,20 @@
         class="flex items-center justify-center gap-3 p-1.5 w-full border hover:bg-gray-100 rounded-full text-lg font-semibold"
         id="google"
         aria-label="google"
+        type="button"
       >
         <nuxt-img
           class="w-full max-w-[30px]"
           src="/google-logo.png"
           alt="googlelogo"
           title="google-logo"
-          sizes="sm:100vw md:50vw lg:400px"
+          :sizes="{
+            sm: '100vw',
+            md: '50vw',
+            lg: '400px',
+          }"
         />
-        <div>Google</div>
+        <span>Google</span>
       </button>
 
       <button
@@ -37,6 +47,7 @@
         class="mt-4 flex items-center justify-center gap-3 p-1.5 w-full border hover:bg-gray-100 rounded-full text-lg font-semibold"
         id="github"
         aria-label="github"
+        type="button"
       >
         <nuxt-img
           class="w-full max-w-[30px]"
@@ -44,7 +55,7 @@
           alt="githublogo"
           title="github-logo"
         />
-        <div>Github</div>
+        <span>Github</span>
       </button>
     </div>
   </div>
