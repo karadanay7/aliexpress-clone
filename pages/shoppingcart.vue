@@ -6,12 +6,13 @@
         class="h-[500px] flex items-center justify-center"
       >
         <div class="pt-20">
-          <nuxt-img
+          <img
             class="mx-auto"
             width="250"
             src="/cart-empty.png"
             alt="empty"
             title="empty"
+            sizes="sm:100vw md:50vw lg:400px"
           />
 
           <div class="text-xl text-center mt-4">No items yet?</div>

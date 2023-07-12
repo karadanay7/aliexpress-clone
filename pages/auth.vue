@@ -4,7 +4,7 @@
       class="w-full flex items-center justify-center p-5 border-b border-b-gray-300"
     >
       <NuxtLink to="/" class="min-w-[170px]">
-        <nuxt-img
+        <img
           width="170"
           src="/AliExpress-logo.png"
           alt="aliexpresslogo"
@@ -28,7 +28,7 @@
         aria-label="google"
         type="button"
       >
-        <nuxt-img
+        <img
           class="w-full max-w-[30px]"
           src="/google-logo.png"
           alt="googlelogo"
