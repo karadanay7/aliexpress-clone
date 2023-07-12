@@ -28,6 +28,7 @@
           src="/google-logo.png"
           alt="googlelogo"
           title="google-logo"
+          sizes="sm:100vw md:50vw lg:400px"
         />
         <div>Google</div>
       </button>
